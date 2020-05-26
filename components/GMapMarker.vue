@@ -37,7 +37,7 @@ export default {
         child = this.$children[0];
         child.initInfoWindow();
       }
-
+      child.infoWindow.open(this.$parent.map, this.marker)
       this.events.forEach(event =>{
         this.$parent.google.maps.event.addListener(this.marker, event, (e) =>{
           if(child !== undefined && event === 'click') child.infoWindow.open(this.$parent.map, this.marker);
